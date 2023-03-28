@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-user',
@@ -6,11 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-user.component.scss']
 })
 export class CreateUserComponent {
-  roles: Roles[] = [
-    {value: Role.ROLE_APPRENDICE, viewValue: 'Aprendiz'},
-    {value: Role.ROLE_OPERATOR, viewValue: 'Operador'},
-    {value: Role.ROLE_ADMIN, viewValue: 'Administrador'},
+
+  disableSelect = new FormControl(false);
+
+  roles: Roles[]= [
+    {value: "deafult", viewValue: 'Seleccione una opción'},
+    {value: "apprendice", viewValue: 'Aprendiz'},
+    {value: "operator", viewValue: 'Operador'},
+    {value: "admin", viewValue: 'Administrador'},
   ];
+
+  regForm = new FormGroup({
+    username: new FormControl('', Validators.required),
+    lastname: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    rol: new FormControl(this.roles[0].value, Validators.required)
+  })
+
+  onReg(){
+    console.log(this.regForm.value);
+  }
+
 }
 
 interface Roles {
@@ -18,8 +36,8 @@ interface Roles {
   viewValue: string;
 }
 
-enum Role {
-  ROLE_APPRENDICE = "apprendice",
-  ROLE_OPERATOR = "operator",
-  ROLE_ADMIN = "admin",
- }
+// enum Role {
+//   ROLE_APPRENDICE = "apprendice",
+//   ROLE_OPERATOR = "operator",
+//   ROLE_ADMIN = "admin",
+//  }

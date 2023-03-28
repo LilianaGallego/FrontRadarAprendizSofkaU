@@ -1,21 +1,29 @@
 <div class="card text-center" style="width: 25rem; margin: 50px auto;">
   <div class="card-header">
-    <h4>Registro</h4>
+    <h4>Crar usuario</h4>
   </div>
   <div class="card-body">
-    <form >
+    <form [formGroup]="regForm" (ngSubmit)="onReg()">
       <img class="mb-4" src="https://ik.imagekit.io/vpvzuhxi3/Sofka/cropped-favicon_q0VXnffK5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1671482719254" alt="" width="80" height="80">
       <div class="form-floating mb-2">
         <input type="text" class="form-control" id="floatingInput" placeholder="name" formControlName="username">
-        <label for="floatingInput">Nombre de usuario</label>
+        <label for="floatingInput">Nombre</label>
+      </div>
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name" formControlName="lastname">
+        <label for="floatingInput">Apellidos</label>
+      </div>
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name" formControlName="email">
+        <label for="floatingInput">Correo Electrónico</label>
       </div>
       <div class="form-floating mb-2">
         <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="password">
         <label for="floatingInput">Contraseña</label>
       </div>
       <div class="form-floating mb-2">
-        <select class="form-select" formControlName="roles">
-          <option *ngFor="let rol of roles">
+        <select class="form-select" formControlName="rol">
+          <option *ngFor="let rol of roles" [value]="rol.value">
             {{ rol.viewValue }}
           </option>
         </select>
@@ -24,6 +32,6 @@
           por favor seleccione un rol valido.
         </div>
       </div>
-      <button class="w-50 btn btn-lg btn-primary mb-2" type="submit">Registrarse</button>
+      <button class="w-50 btn btn-lg btn-primary mb-2" type="submit">Registrar usuario</button>
     </form>
 
