@@ -2,7 +2,52 @@
 <div class="w-75 mx-auto grid items-center">
   <div class="mx-auto  text-center mb-3">
     <h2 class="fw-normal">Radar</h2>
-        <button class="btn btn-primary" routerLink='../radar'>Añadir area de conocimiento</button>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Añadir area de conocimiento</button>
+        <!-- Scrollable modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Ingrese una nueva area de conocimiento</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body flex flex-col">
+                <mat-form-field appearance="fill">
+                  <mat-label>Area de conocimiento</mat-label>
+                  <input matInput>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Descriptor de area</mat-label>
+                  <input matInput>
+                </mat-form-field>
+                <div class="mb-3">
+                  <label for="enabled" class="form-label">¿Disponible?</label>
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="enabled" formControlName="enabled">
+                    <option selected [disabled]="true">Selecione una opcición</option>
+                    <option value=true>Sí</option>
+                    <option value=false>No</option>
+                  </select>
+                </div>
+                <mat-form-field floatLabel="always">
+                  <mat-label>Select</mat-label>
+                  <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <!-- <mat-form-field appearance="fill">
+                  <mat-label>Textarea</mat-label>
+                  <textarea matInput></textarea>
+                </mat-form-field> -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+              </div>
+            </div>
+          </div>
+        </div>
   </div>
 
   <table mat-table [dataSource]="data" class="mat-elevation-z8">
