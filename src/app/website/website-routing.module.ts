@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RadarComponent } from './pages/radar/radar.component';
 import { UserComponent } from './pages/user/user.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
+import { RadarDetailComponent } from './pages/radar-detail/radar-detail.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'create-user',
         component: CreateUserComponent
+      },
+      {
+        path: 'radar-detail',
+        component: RadarDetailComponent
       }
     ]
   }

@@ -10,6 +10,7 @@ import { RadarComponent } from './pages/radar/radar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SharedModule } from 'src/shared/shared.module';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
+import { RadarDetailComponent } from './pages/radar-detail/radar-detail.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CreateUserComponent } from './pages/create-user/create-user.component';
     AverageComponent,
     RadarComponent,
     DashboardComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    RadarDetailComponent
   ],
   imports: [
     CommonModule,
