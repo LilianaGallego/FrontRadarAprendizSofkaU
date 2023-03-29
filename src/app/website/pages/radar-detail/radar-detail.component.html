@@ -13,33 +13,37 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body flex flex-col">
+                
                 <mat-form-field appearance="fill">
                   <mat-label>Area de conocimiento</mat-label>
                   <input matInput>
                 </mat-form-field>
+
                 <mat-form-field appearance="fill">
                   <mat-label>Descriptor de area</mat-label>
                   <input matInput>
                 </mat-form-field>
-                <div class="mb-3">
-                  <label for="enabled" class="form-label">¿Disponible?</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="enabled" formControlName="enabled">
-                    <option selected [disabled]="true">Selecione una opcición</option>
-                    <option value=true>Sí</option>
-                    <option value=false>No</option>
-                  </select>
-                </div>
-                <mat-form-field floatLabel="always">
-                  <mat-label>Select</mat-label>
-                  <mat-select>
-                    <mat-option value="one">First option</mat-option>
-                    <mat-option value="two">Second option</mat-option>
-                  </mat-select>
+
+                <mat-form-field appearance="fill">
+                  <mat-label>Factual</mat-label>
+                  <input matInput>
                 </mat-form-field>
-                <!-- <mat-form-field appearance="fill">
-                  <mat-label>Textarea</mat-label>
-                  <textarea matInput></textarea>
-                </mat-form-field> -->
+
+                <mat-form-field appearance="fill">
+                  <mat-label>Conceptual</mat-label>
+                  <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                  <mat-label>Metacognitivo</mat-label>
+                  <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                  <mat-label>Nivel de apropiación</mat-label>
+                  <input matInput>
+                </mat-form-field>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
