@@ -6,21 +6,23 @@
             class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
-
+          <form [formGroup]="form" (ngSubmit)="login()">
 
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Ingrese una dirección de correo" />
+                placeholder="Ingrese una dirección de correo" formControlName="email" />
               <label class="form-label" for="form3Example3">Correo electrónico</label>
+              <div *ngIf="form.get('email')?.hasError('required') && form.pristine === false" style="color: red;">email requerido</div>
+            <div *ngIf="form.get('email')?.hasError('email') && form.pristine === false" style="color: red;">Email invalido</div>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
               <input type="password" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Ingrese una contraseña" />
+                placeholder="Ingrese una contraseña" formControlName="password" />
               <label class="form-label" for="form3Example4">Contraseña</label>
+              <div *ngIf="form.get('password')?.hasError('required') && form.pristine === false" style="color: red;">Contraseña requerida</div>
             </div>
 
             <div class="d-flex justify-content-between align-items-center">
@@ -28,7 +30,8 @@
             </div>
 
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg"
+              <button type="submit" class="btn btn-primary btn-lg"
+              [disabled]="!form.valid"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Inciar sesión</button>
             </div>
 
