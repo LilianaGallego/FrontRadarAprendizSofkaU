@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./radar.component.scss']
 })
 export class RadarComponent {
+radarList: any[] = [
+  {name:'radar1'},
+  {name: 'radar2'},
+  {name: 'radar3'},
+  {name: 'radar4'},
+  {name: 'radar5'},
+  {name: 'radar6'}];
 
 }
