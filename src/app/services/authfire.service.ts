@@ -6,6 +6,7 @@ import {
   signOut,
   sendPasswordResetEmail
 } from '@angular/fire/auth';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,7 @@ export class AuthfireService {
      await signInWithEmailAndPassword(this.auth, email, password).then(
       response => {
         this.auth.currentUser?.getIdToken().then(
+        
           token => {
             this.token = token;
             localStorage.setItem('token', this.token)
