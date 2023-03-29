@@ -5,6 +5,7 @@ import { AverageComponent } from './pages/average/average.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RadarComponent } from './pages/radar/radar.component';
 import { UserComponent } from './pages/user/user.component';
+import { CreateUserComponent } from './pages/create-user/create-user.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'average',
         component: AverageComponent
+      },
+      {
+        path: 'create-user',
+        component: CreateUserComponent
       }
     ]
   }

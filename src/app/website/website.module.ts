@@ -8,6 +8,8 @@ import { UserComponent } from './pages/user/user.component';
 import { AverageComponent } from './pages/average/average.component';
 import { RadarComponent } from './pages/radar/radar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SharedModule } from 'src/shared/shared.module';
+import { CreateUserComponent } from './pages/create-user/create-user.component';
 
 
 @NgModule({
@@ -17,11 +19,13 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     UserComponent,
     AverageComponent,
     RadarComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateUserComponent
   ],
   imports: [
     CommonModule,
-    WebsiteRoutingModule
+    WebsiteRoutingModule,
+    SharedModule
   ]
 })
 export class WebsiteModule { }

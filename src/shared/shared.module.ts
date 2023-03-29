@@ -10,7 +10,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatChipsModule} from '@angular/material/chips';
-
+import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     MatButtonModule,
@@ -22,8 +23,10 @@ import {MatChipsModule} from '@angular/material/chips';
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule, 
-    MatChipsModule
+    MatInputModule,
+    MatChipsModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatButtonModule,
@@ -36,7 +39,9 @@ import {MatChipsModule} from '@angular/material/chips';
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ]
 })
-export class MaterialModule {}
+export class SharedModule {}
