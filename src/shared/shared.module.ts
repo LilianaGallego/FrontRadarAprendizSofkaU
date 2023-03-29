@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   imports: [
     MatButtonModule,
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatChipsModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTooltipModule
   ],
   exports: [
     MatButtonModule,
@@ -41,7 +43,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatChipsModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTooltipModule
   ]
 })
 export class SharedModule {}
