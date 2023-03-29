@@ -4,10 +4,8 @@ import {
   Auth, createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  signInWithPopup,
-  GoogleAuthProvider
+  sendPasswordResetEmail
 } from '@angular/fire/auth';
-
 
 @Injectable({
   providedIn: 'root'
@@ -43,4 +41,12 @@ export class AuthfireService {
       localStorage.setItem('role', '');
     });
   }
+
+ async resetPassword(email:string):Promise<void>{
+  try {
+    return sendPasswordResetEmail(this.auth,email)
+  } catch (error) {console.log(error);
+    }
+ }
+
 }

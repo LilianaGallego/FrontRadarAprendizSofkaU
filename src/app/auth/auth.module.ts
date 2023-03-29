@@ -6,6 +6,10 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { AppComponent } from '../app.component';
+
 
 
 @NgModule({
@@ -17,7 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    CommonModule
+  ],
+  bootstrap: [AppComponent]
 })
 export class AuthModule { }
