@@ -9,6 +9,7 @@ import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { RadarDetailComponent } from './pages/radar-detail/radar-detail.component';
 import { AdminguardGuard } from '../guards/adminguard.guard';
 import { LoginUserGuard } from '../guards/login-user.guard';
+import { LeagueDetailComponent } from './pages/league-detail/league-detail.component';
 
 const routes: Routes = [
   {
