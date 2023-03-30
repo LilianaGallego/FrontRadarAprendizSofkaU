@@ -13,12 +13,12 @@ export class LeaguesService {
   private url: string = 'http://localhost:8080/';
 
   saveLeagues(league:League):Observable<any>{
-    let direction = this.url + '/create/league';
+    let direction = this.url + 'create/league';
     return this.http.post<League>(direction,league);
   }
 
-  listRLeagues():Observable<any>{
-    let direction = this.url +'/listall/leagues';
+  listLeagues():Observable<any>{
+    let direction = this.url +'listall/leagues';
     return this.http.get<League[]>(direction);
   }
 
