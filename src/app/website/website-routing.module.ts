@@ -48,10 +48,14 @@ const routes: Routes = [
         canActivate: [AdminguardGuard]
       },
       {
-        path: 'radar-detail',
+        path: 'radar-detail/:name',
         component: RadarDetailComponent,
         canActivate: [AdminguardGuard]
-      }
+      },
+      {
+        path: 'league-detail',
+        component: LeagueDetailComponent
+      },
     ]
   }
 ];

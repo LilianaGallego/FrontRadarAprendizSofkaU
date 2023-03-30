@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -7,7 +8,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./league-detail.component.scss']
 })
 export class LeagueDetailComponent {
-  view: [number, number] = [700, 300];
+  displayedColumns: string[] = ['knowledgeArea',
+  'descriptor',
+   'appropiationLevel',
+   'appropiationLevelExpected'];
+
+   displayedColumns1: string[] = ['emailApprentice',
+  'average',
+  ];
+
+
+   ELEMENT_DATA: any[] = [
+    {knowledgeArea: 'aasdas1', descriptor: 'Hydrogen', appropiationLevel: 1.0079, appropiationLevelExpected: 'H'},
+    {knowledgeArea: 'asdas', descriptor: 'jhhjjhu', appropiationLevel: 1.0079, appropiationLevelExpected: 'H'},
+
+  ];
+  ELEMENT_DATA1: any[] = [
+    { emailApprentice: 'emailada@gam.com', average: 4.2},
+    { emailApprentice: 'mi12313@gam.com', average: 4.4},
+    { emailApprentice: 'liaiaqweeb@gam.com', average: 3.5},
+   
+  ];
+
+  dataSource = new MatTableDataSource<any[]>(this.ELEMENT_DATA);
+  dataSource1 = new MatTableDataSource<any[]>(this.ELEMENT_DATA1);
+
+
+  view: [number, number] = [1400, 600];
 
   // options
   legend: boolean = true;
