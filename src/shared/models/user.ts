@@ -2,7 +2,7 @@ import { Average } from "./average";
 
 
 export interface User {
-    id: string;
+    id?: string;
     name: string;
     lastName: string;
     email: string;

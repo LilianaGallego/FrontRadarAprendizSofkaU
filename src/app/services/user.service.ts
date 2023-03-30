@@ -14,7 +14,7 @@ export class UserService {
   private url: string = 'http://localhost:8080/';
 
   saveUser(user:User):Observable<any>{
-    let direction = this.url + '/create/user';
+    let direction = this.url + 'create/user';
     return this.http.post<User>(direction,user)
   }
 
@@ -26,12 +26,12 @@ export class UserService {
   }
 
   listUsers():Observable<any>{
-    let direction = this.url + '/listall/user';
+    let direction = this.url + 'listall/user';
     return this.http.get<User[]>(direction)
   }
 
   addAverageUser(email:string,average:Average):Observable<any>{
-    let direction = this.url + '/addaverage/user/' + email;
+    let direction = this.url + 'addaverage/user/' + email;
     return this.http.post<User>(direction, average)
   }
  

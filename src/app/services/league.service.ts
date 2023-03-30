@@ -22,5 +22,4 @@ export class LeaguesService {
     return this.http.get<League[]>(direction);
   }
 
-
 }
