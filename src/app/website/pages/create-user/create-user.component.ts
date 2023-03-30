@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthfireService } from 'src/app/services/authfire.service';
 import { UserService } from 'src/app/services/user.service';
-import { User } from 'src/shared/models/user';
+
 
 @Component({
   selector: 'app-create-user',
@@ -42,8 +42,21 @@ export class CreateUserComponent {
     })
   }
 
+  get passNoValido() {
+    return this.regForm.get('password')?.invalid  && this.regForm.get('password')?.touched 
+    || this.regForm.get('password')?.value != this.regForm.get('password1')?.value && this.regForm.get('password')?.touched 
+  }
+  get emailNoValido() {
+    return this.regForm.get('email')?.invalid && this.regForm.get('email')?.touched
+  }
+  get nameNoValido() {
+    return this.regForm.get('name')?.invalid && this.regForm.get('name')?.touched
+  }
+  get lastNameNoValido() {
+    return this.regForm.get('lastName')?.invalid && this.regForm.get('lastName')?.touched
+  }
 
-  onReg() {
+  onRegister() {
 
     if (this.regForm.invalid) {
 
