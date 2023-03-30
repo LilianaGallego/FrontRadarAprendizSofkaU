@@ -11,7 +11,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from '../app.component';
 
 
-
 @NgModule({
   declarations: [
     LayoutComponent,
