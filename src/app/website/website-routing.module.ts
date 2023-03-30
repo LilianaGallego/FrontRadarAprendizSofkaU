@@ -7,6 +7,7 @@ import { RadarComponent } from './pages/radar/radar.component';
 import { UserComponent } from './pages/user/user.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { RadarDetailComponent } from './pages/radar-detail/radar-detail.component';
+import { LeagueDetailComponent } from './pages/league-detail/league-detail.component';
 
 const routes: Routes = [
   {
@@ -41,7 +42,11 @@ const routes: Routes = [
       {
         path: 'radar-detail',
         component: RadarDetailComponent
-      }
+      },
+      {
+        path: 'league-detail',
+        component: LeagueDetailComponent
+      },
     ]
   }
 ];
