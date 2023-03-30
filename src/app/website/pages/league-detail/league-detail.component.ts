@@ -34,7 +34,7 @@ export class LeagueDetailComponent {
   dataSource1 = new MatTableDataSource<any[]>(this.ELEMENT_DATA1);
 
 
-  view: [number, number] = [1400, 600];
+  view: [number, number] = [1024, 350];
 
   // options
   legend: boolean = true;
