@@ -40,7 +40,7 @@ const routes: Routes = [
         component: CreateUserComponent
       },
       {
-        path: 'radar-detail',
+        path: 'radar-detail/:name',
         component: RadarDetailComponent
       },
       {

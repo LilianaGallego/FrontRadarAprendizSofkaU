@@ -2,7 +2,7 @@ import {KnowledgeArea} from "./knowledgeArea"
 
 
 export interface Radar {
-    radarName: string;
+  name: string;
     knowledgeAreas?: KnowledgeArea[];
 }
 

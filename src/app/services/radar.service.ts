@@ -11,11 +11,13 @@ export class RadarService {
 
   constructor(private http:HttpClient) { }
 
-  private url: string = 'http://localhost:8080/';
- 
+  private url: string = 'http://localhost:8080';
+
   saveRadar(radar:Radar):Observable<any>{
     let direction = this.url + '/create/radar';
-    return this.http.post<Radar>(direction,radar);
+    return this.http.post<Radar>(direction,radar, {
+      responseType: 'text' as 'json',
+    });
   }
 
   listRadars():Observable<any>{
@@ -23,10 +25,14 @@ export class RadarService {
     return this.http.get<Radar[]>(direction);
   }
 
-  addKnowledgeAreaRadar(radarId:string,
-    knowledgeArea:KnowledgeArea):Observable<any>{
+  getRadar(name: string): Observable<any>{
+    let direction =  this.url +`/radar/${name}`;
+    return this.http.get<Radar>(direction);
+  }
+
+  addKnowledgeAreaRadar(radarId:string, knowledgeArea:KnowledgeArea):Observable<any>{
     let direction = this.url +'/add/knowledgeArea/'+ radarId;
-    return this.http.put<Radar>(direction,knowledgeArea);
+    return this.http.put<Radar>(direction, knowledgeArea);
 
   }
 

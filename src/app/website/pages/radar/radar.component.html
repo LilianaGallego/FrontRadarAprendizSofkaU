@@ -4,6 +4,37 @@
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <h1 class="display-4 fw-normal">Bienvenido a la sección de Radares</h1>
       <p class="fs-5 text-body-secondary">Aquí podra ver todos los radares disponibles y/o crear uno nuevo</p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Añadir area de conocimiento</button>
+      <!-- Scrollable modal -->
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Ingrese una nueva area de conocimiento</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body flex flex-col">
+              <form
+              [formGroup]="formCreateRadar"
+              (ngSubmit)="onSubmitformCreateRadar()"
+              id="frmRadar">
+              <mat-form-field appearance="fill">
+                <mat-label>Nombre del Radar</mat-label>
+                <input type="text" formControlName="name" matInput>
+              </mat-form-field>
+              <small *ngIf="nameNoValido" class="text-danger">
+                Ingrese minimo 4 letras
+              </small>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button form="frmRadar" type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -15,17 +46,10 @@
             <h1 class="my-0 card-title pricing-card-title">{{ radar.name }}</h1>
           </div>
           <div class="card-body">
-            <!-- <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>10 users included</li>
-              <li>2 GB of storage</li>
-              <li>Email support</li>
-              <li>Help center access</li>
-            </ul> -->
             <button
             type="button"
             class="w-100 btn btn-lg btn-outline-primary"
-            routerLink="../radar-detail">
+            [routerLink]= "['../radar-detail', radar.name]">
             Ver más
             </button>
           </div>
