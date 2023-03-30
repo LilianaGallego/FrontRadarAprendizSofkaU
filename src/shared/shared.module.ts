@@ -13,6 +13,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
+// import { NgxChartsModule } from '@swimlane/ngx-charts';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   imports: [
     MatButtonModule,
@@ -28,7 +30,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatChipsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatTooltipModule
+    MatTooltipModule,
+
   ],
   exports: [
     MatButtonModule,
@@ -44,7 +47,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatChipsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatTooltipModule
+    MatTooltipModule,
   ]
 })
 export class SharedModule {}
