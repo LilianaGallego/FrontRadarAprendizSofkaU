@@ -1,7 +1,7 @@
 export interface League {
     leagueId?: string;
     name: string;
-    radarId?: string;
+    radarName?: string;
     period: string;
     coach: string;
     usersEmails?: string[];

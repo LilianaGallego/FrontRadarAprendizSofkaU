@@ -6,7 +6,7 @@ import { League } from 'src/shared/models/league';
 @Injectable({
   providedIn: 'root'
 })
-export class LeaguesService {
+export class LeagueService {
 
   constructor(private http:HttpClient) { }
 
@@ -22,6 +22,9 @@ export class LeaguesService {
     return this.http.get<League[]>(direction);
   }
 
-  
+  getLeague(leagueName: string):Observable<any>{
+    let direction = this.url + '/league/'+ leagueName;
+    return this.http.get<League>(direction);
+  }
 
 }

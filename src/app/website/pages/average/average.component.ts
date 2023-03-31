@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { LeaguesService } from 'src/app/services/league.service';
+import { LeagueService } from 'src/app/services/league.service';
 import { League } from 'src/shared/models/league';
 
 @Component({
@@ -15,7 +15,7 @@ export class AverageComponent implements OnInit {
 
   constructor( private toast: ToastrService,
     private router:Router,
-    private leagueService: LeaguesService){}
+    private leagueService: LeagueService){}
   ngOnInit(): void {
    this.getLeagueList();
   }
@@ -27,8 +27,7 @@ export class AverageComponent implements OnInit {
 
       this.leagueList = response;
       console.log(this.leagueList);
-      
-
+  
     });
   }
 
