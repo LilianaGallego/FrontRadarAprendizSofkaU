@@ -7,6 +7,9 @@ import { RadarComponent } from './pages/radar/radar.component';
 import { UserComponent } from './pages/user/user.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { RadarDetailComponent } from './pages/radar-detail/radar-detail.component';
+import { AdminguardGuard } from '../guards/adminguard.guard';
+import { LoginUserGuard } from '../guards/login-user.guard';
+import { LeagueDetailComponent } from './pages/league-detail/league-detail.component';
 
 const routes: Routes = [
   {
@@ -20,28 +23,39 @@ const routes: Routes = [
       },
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [LoginUserGuard]
       },
       {
         path: 'user',
-        component: UserComponent
+        component: UserComponent,
+        canActivate: [AdminguardGuard]
       },
       {
         path: 'radar',
-        component: RadarComponent
+        component: RadarComponent,
+        canActivate: [AdminguardGuard]
       },
       {
         path: 'average',
-        component: AverageComponent
+        component: AverageComponent,
+        canActivate: [LoginUserGuard]
+
       },
       {
         path: 'create-user',
-        component: CreateUserComponent
+        component: CreateUserComponent,
+        canActivate: [AdminguardGuard]
       },
       {
-        path: 'radar-detail',
-        component: RadarDetailComponent
-      }
+        path: 'radar-detail/:name',
+        component: RadarDetailComponent,
+        canActivate: [AdminguardGuard]
+      },
+      {
+        path: 'league-detail/:name',
+        component: LeagueDetailComponent
+      },
     ]
   }
 ];
